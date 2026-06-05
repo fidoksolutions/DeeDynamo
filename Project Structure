@@ -1,0 +1,112 @@
+crm-lite/
+├── client/                        # React + Vite frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── api/                   # Axios instance + service modules
+│   │   │   ├── axios.js
+│   │   │   ├── authApi.js
+│   │   │   ├── clientsApi.js
+│   │   │   ├── servicesApi.js
+│   │   │   ├── quotationsApi.js
+│   │   │   ├── invoicesApi.js
+│   │   │   ├── expensesApi.js
+│   │   │   └── reportsApi.js
+│   │   ├── components/
+│   │   │   ├── layout/
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   ├── Header.jsx
+│   │   │   │   └── AppLayout.jsx
+│   │   │   ├── ui/
+│   │   │   │   ├── StatCard.jsx
+│   │   │   │   ├── DataTable.jsx
+│   │   │   │   ├── Modal.jsx
+│   │   │   │   ├── SearchBar.jsx
+│   │   │   │   ├── Badge.jsx
+│   │   │   │   ├── ConfirmDialog.jsx
+│   │   │   │   └── Pagination.jsx
+│   │   │   ├── forms/
+│   │   │   │   ├── ClientForm.jsx
+│   │   │   │   ├── ServiceForm.jsx
+│   │   │   │   ├── QuotationForm.jsx
+│   │   │   │   ├── InvoiceForm.jsx
+│   │   │   │   └── ExpenseForm.jsx
+│   │   │   └── pdf/
+│   │   │       ├── QuotationPDF.jsx
+│   │   │       └── InvoicePDF.jsx
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useClients.js
+│   │   │   ├── useServices.js
+│   │   │   ├── useQuotations.js
+│   │   │   ├── useInvoices.js
+│   │   │   └── useExpenses.js
+│   │   ├── pages/
+│   │   │   ├── auth/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   └── Register.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── clients/
+│   │   │   │   ├── ClientList.jsx
+│   │   │   │   └── ClientDetail.jsx
+│   │   │   ├── services/
+│   │   │   │   └── ServiceList.jsx
+│   │   │   ├── quotations/
+│   │   │   │   ├── QuotationList.jsx
+│   │   │   │   └── QuotationDetail.jsx
+│   │   │   ├── invoices/
+│   │   │   │   ├── InvoiceList.jsx
+│   │   │   │   └── InvoiceDetail.jsx
+│   │   │   ├── expenses/
+│   │   │   │   └── ExpenseList.jsx
+│   │   │   └── reports/
+│   │   │       └── ProfitLoss.jsx
+│   │   ├── utils/
+│   │   │   ├── formatters.js       # currency, date, percentage helpers
+│   │   │   └── pdfGenerator.js     # jsPDF helpers
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   └── package.json
+│
+└── server/                        # Express API
+    ├── src/
+    │   ├── config/
+    │   │   ├── db.js               # pg pool setup
+    │   │   └── env.js              # validated env vars
+    │   ├── middleware/
+    │   │   ├── auth.js             # JWT verify middleware
+    │   │   ├── validate.js         # express-validator runner
+    │   │   └── errorHandler.js     # global error handler
+    │   ├── routes/
+    │   │   ├── auth.routes.js
+    │   │   ├── clients.routes.js
+    │   │   ├── services.routes.js
+    │   │   ├── quotations.routes.js
+    │   │   ├── invoices.routes.js
+    │   │   ├── expenses.routes.js
+    │   │   └── reports.routes.js
+    │   ├── controllers/
+    │   │   ├── auth.controller.js
+    │   │   ├── clients.controller.js
+    │   │   ├── services.controller.js
+    │   │   ├── quotations.controller.js
+    │   │   ├── invoices.controller.js
+    │   │   ├── expenses.controller.js
+    │   │   └── reports.controller.js
+    │   ├── validators/
+    │   │   ├── auth.validator.js
+    │   │   ├── client.validator.js
+    │   │   ├── service.validator.js
+    │   │   ├── quotation.validator.js
+    │   │   ├── invoice.validator.js
+    │   │   └── expense.validator.js
+    │   └── app.js
+    ├── migrations/
+    │   └── 001_init.sql
+    ├── .env.example
+    ├── server.js
+    └── package.json
