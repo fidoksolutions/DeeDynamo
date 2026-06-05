@@ -1,0 +1,6 @@
+GET    /api/reports/dashboard       stats overview (current month)
+GET    /api/reports/profit-loss     ?from=&to=   revenue / expenses / profit
+GET    /api/reports/revenue         ?from=&to=&group_by=month|week
+GET    /api/reports/expenses-by-category  ?from=&to=
+GET    /api/reports/top-clients     ?limit=5&from=&to=
+GET    /api/reports/outstanding     overdue invoices summary
