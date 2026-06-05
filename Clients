@@ -1,0 +1,5 @@
+GET    /api/clients            ?search=&page=&limit=
+POST   /api/clients            create client
+GET    /api/clients/:id        get client + their quotes/invoices
+PUT    /api/clients/:id        update client
+DELETE /api/clients/:id        soft delete (or hard delete)
