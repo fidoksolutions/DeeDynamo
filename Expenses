@@ -1,0 +1,7 @@
+GET    /api/expenses           ?category_id=&from=&to=&page=&limit=
+POST   /api/expenses
+GET    /api/expenses/:id
+PUT    /api/expenses/:id
+DELETE /api/expenses/:id
+GET    /api/expenses/categories     list all categories
+POST   /api/expenses/categories     create category
