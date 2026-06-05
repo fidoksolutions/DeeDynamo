@@ -1,0 +1,5 @@
+GET    /api/services           ?search=&active=
+POST   /api/services           create service
+GET    /api/services/:id
+PUT    /api/services/:id
+DELETE /api/services/:id
