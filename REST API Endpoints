@@ -1,0 +1,4 @@
+POST   /api/auth/register      { name, email, password }
+POST   /api/auth/login         { email, password }  → { token, user }
+GET    /api/auth/me            → current user profile
+PUT    /api/auth/profile       update name/password
