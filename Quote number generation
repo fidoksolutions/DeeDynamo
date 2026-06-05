@@ -1,0 +1,5 @@
+// In quotations controller:
+const { rows } = await query(
+  `SELECT COUNT(*)+1 AS next FROM quotations WHERE DATE_PART('year', created_at) = DATE_PART('year', NOW())`
+);
+const quoteNumber = `Q-${new Date().getFullYear()}-${String(rows[0].next).padStart(4, '0')}`;
