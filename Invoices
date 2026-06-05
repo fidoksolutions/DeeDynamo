@@ -1,0 +1,8 @@
+GET    /api/invoices           ?status=&client_id=&from=&to=&page=&limit=
+POST   /api/invoices           create with items
+GET    /api/invoices/:id       with line items + client
+PUT    /api/invoices/:id
+DELETE /api/invoices/:id
+PATCH  /api/invoices/:id/status   { status }
+PATCH  /api/invoices/:id/payment  { amount_paid, paid_date }
+GET    /api/invoices/:id/pdf
