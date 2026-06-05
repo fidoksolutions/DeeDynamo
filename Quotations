@@ -1,0 +1,8 @@
+GET    /api/quotations         ?status=&client_id=&from=&to=&page=&limit=
+POST   /api/quotations         create with items array
+GET    /api/quotations/:id     with line items + client
+PUT    /api/quotations/:id     update quote + items
+DELETE /api/quotations/:id
+PATCH  /api/quotations/:id/status  { status }
+POST   /api/quotations/:id/convert-to-invoice
+GET    /api/quotations/:id/pdf   → PDF binary (or use client-side jsPDF)
