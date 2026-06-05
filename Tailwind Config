@@ -1,0 +1,14 @@
+// tailwind.config.js
+export default {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
+  theme: {
+    extend: {
+      colors: {
+        slate: { ... }, // default
+      },
+      fontFamily: {
+        sans: ['Inter var', 'Inter', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
