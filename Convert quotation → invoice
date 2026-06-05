@@ -1,0 +1,16 @@
+exports.convertToInvoice = async (req, res, next) => {
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    const { rows: [quote] } = await client.query(
+      'SELECT * FROM quotations WHERE id=$1 AND created_by=$2',
+      [req.params.id, req.user.id]
+    );
+    // copy items, create invoice record, update quote status
+    await client.query('UPDATE quotations SET status=$1 WHERE id=$2', ['accepted', quote.id]);
+    // ... insert invoice + items
+    await client.query('COMMIT');
+    res.json({ invoiceId: newInvoice.id });
+  } catch (e) { await client.query('ROLLBACK'); next(e); }
+  finally { client.release(); }
+};
